@@ -4,16 +4,29 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    [SerializeField] int speed;
+    [SerializeField] int moveSpeed;
     // Start is called before the first frame update
     void Start()
     {
-        
+        PrintInstructions();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Input.GetAxis("Horizontal")*speed*Time.deltaTime, 0, Input.GetAxis("Vertical")*speed * Time.deltaTime);
+        MovePlayer();
+    }
+    void PrintInstructions()
+    {
+        Debug.Log("Welcome to the game");
+        Debug.Log("Move your player with WASD or arrow keys");
+        Debug.Log("Don't hit the walls!");
+    }
+
+    void MovePlayer()
+    {
+        float xValue = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+        float zValue = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+        transform.Translate(xValue, 0, zValue);
     }
 }
