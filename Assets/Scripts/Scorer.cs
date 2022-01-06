@@ -5,9 +5,9 @@ using UnityEngine;
 public class Scorer : MonoBehaviour
 {
     int hits = 0;
-    private void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
-        hits++;
+        hits ++ ;
         Debug.Log("Current Score is :" + hits);
     }
 }
