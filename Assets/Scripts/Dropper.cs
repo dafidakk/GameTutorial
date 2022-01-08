@@ -5,8 +5,8 @@ using UnityEngine;
 public class Dropper : MonoBehaviour
 {
     [SerializeField] float timeToWait = 5f;
-    MeshRenderer renderer;
-    Rigidbody rigidbody;
+    new MeshRenderer renderer;
+    new Rigidbody rigidbody;
     // Start is called before the first frame update
     void Start()
     {
